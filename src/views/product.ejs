@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>your Products <%= foundProduct.Name %></title>
+    <%- include("bootstrap.ejs") %>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Name - <%= foundProduct.Name %></h3>
+      <p>qty - <%= foundProduct.qty %></p>
+      <p>Category - <%= foundProduct.list %></p>
+      <p>Date - <%= foundProduct.date %></p>
+      <a href="/<%= foundProduct._id %>/edit" class="btn btn-info">Edit</a>
+      <form action="/<%= foundProduct._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger">Delete</button>
+      </form>
+      <br />
+      <a href="/items">Back to All medicine</a>
+    </div>
+  </body>
+</html>

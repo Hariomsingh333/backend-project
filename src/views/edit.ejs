@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit you <%= foundProduct.Name %> Medicine</title>
+    <%- include("bootstrap.ejs") %>
+  </head>
+  <body>
+    <p class="display-3 text-center"><%= foundProduct.Name %> Medicine Edit</p>
+    <div class="container my-3">
+      <form action="/<%= foundProduct._id %>?_method=PUT" method="POST">
+        <label for="Name">
+          Medicine Name:
+          <input
+            type="text"
+            name="Name"
+            id="Name"
+            value="<%= foundProduct.Name %> "
+          />
+        </label>
+        <label for="qty">
+          qty:
+          <input
+            type="number"
+            name="qty"
+            id="qty"
+            value="<%= foundProduct.qty %>"
+          />
+        </label>
+        <label for="list">
+          Category:
+          <select name="list" id="list" value="<%= foundProduct.list %>">
+            <option value="fever">fever</option>
+            <option value="Covid-19">Covid-19</option>
+            <option value="Cough">Cough</option>
+            <option value="Others">Others</option>
+          </select>
+        </label>
+        <label for="date">
+          Date:
+          <input
+            type="Date"
+            name="date"
+            id="date"
+            value="<%= foundProduct.date %>"
+          />
+        </label>
+        <button class="btn btn-danger">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

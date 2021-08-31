@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your products</title>
+    <%- include("bootstrap.ejs") %>
+  </head>
+  <body>
+    <p class="display-2 text-center">Your Products</p>
+    <div class="container">
+      <% for(let AllProducts of findProduct){ %>
+      <h3><a href="<%= AllProducts._id%>"><%= AllProducts.Name %></a></h3>
+      <% } %>
+      <a href="/new">Create a new One</a>
+    </div>
+  </body>
+</html>
